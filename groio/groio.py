@@ -3,10 +3,7 @@
 
 """ A simple library to handle the reading and writing of GRO file """
 
-
-__author__ = "Jonathan Barnoud, Hubert Santuz"
-
-
+from __future__ import absolute_import
 import itertools
 
 
