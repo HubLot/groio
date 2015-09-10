@@ -15,18 +15,18 @@ Usage
 
 .. code:: python
 
-    import groIO
+    import groio
 
     #Read a gro file
-    title, atoms, box = groIO.parse_file("filin.gro")
+    title, atoms, box = groio.parse_file("filin.gro")
 
     #Write a gro file
     with open("filout.gro", "w") as f:
-        for line in groIO.write_gro(title, output_atoms, box):
+        for line in groio.write_gro(title, output_atoms, box):
             print(line, end='', file=f)
 
     #Renumber the atoms to avoid number above 100 000
-    atoms = groIO.renumber(atoms)
+    atoms = groio.renumber(atoms)
 
 
 The function ``parse_file`` returns :
@@ -42,10 +42,10 @@ Run tests
 Unit tests are available for g_remove_water in test_g_remove_water.py. You can
 run them by simply execute test_g_remove_water.py::
 
-    python test_groIO.py
+    python test_groio.py
 
 The `nosetests python module <https://nose.readthedocs.org>`_ allows a smarter
 display of the report by displaying test function outputs only when the test
 fail. If you have nosetests installed you can run the test by typing::
 
-    nosetests test_groIO.py
+    nosetests test_groio.py
