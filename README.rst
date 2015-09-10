@@ -3,9 +3,8 @@ groIO
 
 .. image:: https://travis-ci.org/HubLot/groio.svg?branch=master
    :target: https://travis-ci.org/HubLot/groio
-.. image:: https://coveralls.io/repos/HubLot/groio/badge.svg?branch=master
-   :target: https://coveralls.io/r/HubLot/groio?branch=master 
-
+.. image:: https://coveralls.io/repos/HubLot/groio/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/HubLot/groio?branch=master
 
 
 A library to handle the reading and writing of a gro file.
