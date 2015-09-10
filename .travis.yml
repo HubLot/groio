@@ -12,6 +12,7 @@ install:
 
 # command to run tests
 script:
-    - nosetests --with-coverage --cover-package=groIO test_groIO.py
+    - cd tests
+    - nosetests --with-coverage --cover-package=groio test_groio.py
 after_success:
     - coveralls

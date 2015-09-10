@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 """
-Unit tests for groIO library
+Unit tests for groio library
 """
 
 from __future__ import division, print_function
@@ -10,7 +10,7 @@ import unittest
 import os
 import sys
 import contextlib
-import groIO
+import groio
 
 __author__ = "Hubert Santuz & Jonathan Barnoud"
 
@@ -34,7 +34,7 @@ class TestReadWrite(unittest.TestCase):
         """
 
         path = os.path.join(REFDIR, "regular.gro")
-        title, atoms, box = groIO.parse_file(path)
+        title, atoms, box = groio.parse_file(path)
 
         nb_atoms = len(atoms)
 
@@ -61,8 +61,8 @@ class TestReadWrite(unittest.TestCase):
         print(files_desc)
 
         for filin in files_desc:
-            with self.assertRaises(groIO.FormatError) as context:
-                groIO.parse_file(filin)
+            with self.assertRaises(groio.FormatError) as context:
+                groio.parse_file(filin)
                 self.assertEqual("Something is wrong in the format", context.exception)
 
     def test_write(self):
@@ -76,7 +76,7 @@ class TestReadWrite(unittest.TestCase):
         # Write it
         test_write = os.path.join(REFDIR, "test_write.gro")
         with open(test_write, "w") as fout:
-            for line in groIO.write_gro(title, atoms, box):
+            for line in groio.write_gro(title, atoms, box):
                 print(line, end='', file=fout)
 
         # Reference file
@@ -128,7 +128,7 @@ class TestGrolib(unittest.TestCase):
         Test the atom renumbering with the renumber function
         """
         path = os.path.join(REFDIR, "regular.gro")
-        title, atoms, box = groIO.parse_file(path)
+        title, atoms, box = groio.parse_file(path)
 
         removed_res = (10, 50, 60)
         # Remove some residues and renumber atoms and residues
@@ -176,7 +176,7 @@ def _create_runumbered(atoms, removed_res):
     # Remove some residues
     keep = [atom for atom in atoms if not atom['resid'] in removed_res]
     # Renumber residues and atoms
-    renumbered = groIO.renumber(keep)
+    renumbered = groio.renumber(keep)
     return renumbered
 
 
