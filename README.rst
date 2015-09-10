@@ -30,10 +30,11 @@ Usage
     atoms = groIO.renumber(atoms)
 
 
-The function `parse_file` returns :
-- title: the title of the system as written on line 1 of the file  as a string
-- atoms: a list of atom, each atom is stored as a dictionary
-- box: the box description as written on the last line as a string
+The function ``parse_file`` returns :
+
+- ``title``: the title of the system as written on line 1 of the file  as a string
+- ``atoms``: a list of atom, each atom is stored as a dictionary
+- ``box``: the box description as written on the last line as a string
 
 
 Run tests
