@@ -7,11 +7,11 @@ python:
 # command to install dependencies
 install:
   - pip install python-coveralls
-  - pip install coverage
-  - pip install nose
+  - python setup.py install 
 
 # command to run tests
 script:
-    - nosetests --with-coverage --cover-package=groio tests/test_groio.py
+    - coverage run setup.py test
+#    - nosetests --with-coverage --cover-package=groio tests/test_groio.py
 after_success:
     - coveralls
