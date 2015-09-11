@@ -16,7 +16,7 @@ __author__ = "Hubert Santuz & Jonathan Barnoud"
 
 
 # Path to the directory containing the material for tests
-REFDIR = "test_resources"
+REFDIR = os.path.join(os.path.dirname(__file__),"test_resources")
 
 # Gro files usually store coordinates with decimals. Let's be precise
 # until the fourth one.
