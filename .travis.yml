@@ -7,11 +7,10 @@ python:
 # command to install dependencies
 install:
   - pip install python-coveralls
-  - python setup.py install 
+  - pip install -e .[tests] 
 
 # command to run tests
 script:
-    - coverage run setup.py test
-#    - nosetests --with-coverage --cover-package=groio tests/test_groio.py
+    - python setup.py nosetests
 after_success:
     - coveralls

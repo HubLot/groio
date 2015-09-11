@@ -7,6 +7,11 @@ from setuptools import setup, find_packages
 with open('README.rst') as f:
     readme = f.read()
 
+tests_require = [
+    'nose',
+    'coverage',
+]
+
 setup(
 
     name='groio',
@@ -44,12 +49,13 @@ setup(
 
     packages=find_packages(exclude=['tests*']),
 
-    # For 'python setup.py test'
-    tests_require=[
-        'nose',
-        'coverage'
-    ],
-    test_suite='nose.collector',
-
+    # List additional groups of dependencies here (tests)
+    # To install, use
+    # $ pip install -e .[tests]
+    extras_require=dict(
+        tests=tests_require,
+    ),
+    tests_require=tests_require,
+    test_suite='tests'
 
 )
