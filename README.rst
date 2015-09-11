@@ -10,6 +10,11 @@ groIO
 A library to handle the reading and writing of a gro file.
 
 
+Installation
+------------
+
+    pip install groio
+
 Usage
 -----
 
@@ -39,13 +44,5 @@ The function ``parse_file`` returns :
 Run tests
 ---------
 
-Unit tests are available for g_remove_water in test_g_remove_water.py. You can
-run them by simply execute test_g_remove_water.py::
-
-    python test_groio.py
-
-The `nosetests python module <https://nose.readthedocs.org>`_ allows a smarter
-display of the report by displaying test function outputs only when the test
-fail. If you have nosetests installed you can run the test by typing::
-
-    nosetests test_groio.py
+Unit tests are available through `nosetests python module <https://nose.readthedocs.org>`_.
+    nosetests tests/test_groio.py
