@@ -27,6 +27,22 @@ class TestReadWrite(unittest.TestCase):
     """
     Test for reading and writing a GRO file.
     """
+    def test_stop_at_empty_line(self):
+        """
+        Test the generator that should stops at empty line
+        """
+
+        reference_input = ['a', 'b', 'c', '', 'e', 'f']
+        self.assertEqual(list(groio.groio.stop_at_empty_line(reference_input)),
+                         reference_input[:3])
+
+        reference_input[3] = '   '
+        self.assertEqual(list(groio.groio.stop_at_empty_line(reference_input)),
+                         reference_input[:3])
+
+        reference_input[3] = '  not empty  '
+        self.assertEqual(list(groio.groio.stop_at_empty_line(reference_input)),
+                         reference_input)
 
     def test_read(self):
         """
